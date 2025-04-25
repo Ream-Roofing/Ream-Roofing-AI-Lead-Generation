@@ -18,13 +18,11 @@ module.exports = async (req, res) => {
   var [name, phoneNo, email, service] =
     name_phoneNo_email_service.split("_");
 
-    if (email.includes("at") && email.includes("dot com")) {
-        email = email
-        .replace(/\s*at\s*/gi, "@")
-        .replace(/\s*dot\s*com\s*/gi, ".com")
-        .replace(/\s+/g, "") // remove extra spaces if any remain
-        .trim();       
-      }
+    email = email
+    .replace(/\s*at\s*/gi, "@")
+    .replace(/\s*dot\s*com\s*/gi, ".com")
+    .replace(/\s+/g, "")
+    .trim();
 
   if (!name || !phoneNo || !email) {
     return res
