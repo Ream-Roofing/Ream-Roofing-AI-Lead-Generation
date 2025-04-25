@@ -19,8 +19,8 @@ module.exports = async (req, res) => {
     name_phoneNo_email_service.split("_");
 
     if (email.includes("at") && email.includes("dot com")) {
-        email = email.replace(" at ", "@").replace(" dot com ", ".com");
-        email = email.trim();
+        email = email.replace(/\s*at\s*/i, "@").replace(/\s*dot com\s*/i, ".com");
+        email = email.trim();        
       }
 
   if (!name || !phoneNo || !email) {
