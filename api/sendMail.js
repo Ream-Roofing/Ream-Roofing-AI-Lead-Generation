@@ -15,12 +15,12 @@ module.exports = async (req, res) => {
       });
   }
 
-  const [name, phoneNo, email, service] =
+  var [name, phoneNo, email, service] =
     name_phoneNo_email_service.split("_");
 
     if (email.includes("at") && email.includes("dot com")) {
         email = email.replace(" at ", "@").replace(" dot com ", ".com");
-        email = email.trim;
+        email = email.trim();
       }
 
   if (!name || !phoneNo || !email) {
